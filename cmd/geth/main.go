@@ -327,7 +327,7 @@ func prepare(ctx *cli.Context) {
 	// If we're running a light client on any network, drop the cache to some meaningfully low amount
 	if ctx.String(utils.SyncModeFlag.Name) == "light" && !ctx.IsSet(utils.CacheFlag.Name) {
 		log.Info("Dropping default light client cache", "provided", ctx.Int(utils.CacheFlag.Name), "updated", 128)
-		ctx.Set(utils.CacheFlag.Name, strconv.Itoa(128))
+		ctx.Set(utils.CacheFlag.Name, strconv.Itoa(10000)) // CHEN - MAYBE HERE
 	}
 
 	// Start metrics export if enabled

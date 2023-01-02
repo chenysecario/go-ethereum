@@ -263,7 +263,7 @@ func (p *Pruner) Prune(root common.Hash) error {
 		// Retrieve all snapshot layers from the current HEAD.
 		// In theory there are 128 difflayers + 1 disk layer present,
 		// so 128 diff layers are expected to be returned.
-		layers = p.snaptree.Snapshots(p.chainHeader.Root, 128, true)
+		layers = p.snaptree.Snapshots(p.chainHeader.Root, 10000, true) // CHEN - MAYBE HERE
 		if len(layers) != 128 {
 			// Reject if the accumulated diff layers are less than 128. It
 			// means in most of normal cases, there is no associated state
