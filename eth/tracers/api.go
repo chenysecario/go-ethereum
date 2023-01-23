@@ -48,7 +48,7 @@ import (
 const (
 	// defaultTraceTimeout is the amount of time a single transaction can execute
 	// by default before being forcefully aborted.
-	defaultTraceTimeout = 100 * time.Second // CHEN - changed to avoid timeout
+	defaultTraceTimeout = 1000 * time.Second // CHEN - changed to avoid timeout
 
 	// defaultTraceReexec is the number of blocks the tracer is willing to go back
 	// and reexecute to produce missing historical state necessary to run a specific
