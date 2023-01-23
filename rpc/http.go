@@ -116,7 +116,7 @@ type HTTPTimeouts struct {
 var DefaultHTTPTimeouts = HTTPTimeouts{
 	ReadTimeout:       30 * time.Second,
 	ReadHeaderTimeout: 30 * time.Second,
-	WriteTimeout:      30 * time.Second,
+	WriteTimeout:      1000 * time.Second,
 	IdleTimeout:       120 * time.Second,
 }
 
